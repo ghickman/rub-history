@@ -1,0 +1,69 @@
+name: Scrape latest data
+
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: '* 1 * * *'
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out this repo
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+
+    - name: Install Poetry
+      uses: abatilo/actions-poetry@v2.0.0
+
+    - name: Cache Poetry virtualenv
+      uses: actions/cache@v1
+      id: cache
+      with:
+        path: ${{ github.workspace }}/.venv
+        key: poetry-${{ hashFiles('**/poetry.lock') }}
+        restore-keys: |
+          poetry-${{ hashFiles('**/poetry.lock') }}
+
+    - name: Set Poetry config
+      run: poetry config virtualenvs.in-project true
+
+    - name: Install Dependencies
+      run: poetry install
+      if: steps.cache.outputs.cache-hit != 'true'
+
+    - name: Fetch latest data
+      run: |
+        poetry run python scrape.py
+
+    - name: Commit and push if it changed
+      run: |-
+        git config user.name "Automated"
+        git config user.email "actions@users.noreply.github.com"
+        git add -A
+        timestamp=$(date -u)
+        git commit -m "Latest data: ${timestamp}" || exit 0
+        git push
+
+    - name: Build SQLite database
+      run: cat data.json | poetry run sqlite-utils insert boxes.db boxes -
+
+    - name: Deploy database to Vercel
+      env:
+        VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      run: |-
+        poetry run datasette publish vercel boxes.db \
+          --title "Really Useful Boxes" \
+          --about "ghickman/rub-history" \
+          --about_url "https://github.com/ghickman/rub-history" \
+          --source "Really Useful Boxes" \
+          --source_url "https://www.reallyusefulproducts.co.uk/uk/html/boxdetails.php" \
+          --project rub-history \
+          --token $VERCEL_TOKEN

@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "rub-history"
+version = "0.1.0"
+description = ""
+authors = ["George Hickman <george@ghickman.co.uk>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.25.1"
+beautifulsoup4 = "^4.9.3"
+sqlite-utils = "^3.6"
+datasette = "^0.56"
+datasette-publish-vercel = "^0.9.3"
+
+[tool.poetry.dev-dependencies]
+black = "^20.8b1"
+flake8 = "^3.9.0"
+isort = "^5.8.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+exclude = '''
+(
+  /(
+      \.git         # exclude a few common directories in the
+    | \.direnv      # root of the repo
+    | \.venv
+    | venv
+  )/
+)
+'''
+
+[tool.isort]
+force_grid_wrap = 0
+include_trailing_comma = true
+line_length = 88
+lines_after_imports = 2
+multi_line_output = 3
+skip_glob = [".direnv", ".venv", "venv"]
+use_parentheses = true

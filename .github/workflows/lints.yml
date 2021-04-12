@@ -1,0 +1,91 @@
+---
+name: Linting
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: "actions/setup-python@v2"
+        with:
+          python-version: "3.9"
+      - uses: abatilo/actions-poetry@v2.0.0
+      - name: Set Poetry config
+        run: poetry config virtualenvs.in-project true
+      - name: Cache Poetry virtualenv
+        uses: actions/cache@v2
+        with:
+          path: ${{ github.workspace }}/.venv
+          key: poetry-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: |
+            poetry-${{ hashFiles('**/poetry.lock') }}
+      - name: Set Poetry config
+        run: poetry config virtualenvs.in-project true
+      - name: Install Dependencies
+        run: poetry install
+        if: steps.cache.outputs.cache-hit != 'true'
+
+  format:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: "actions/setup-python@v2"
+        with:
+          python-version: "3.9"
+      - uses: abatilo/actions-poetry@v2.0.0
+      - name: Set Poetry config
+        run: poetry config virtualenvs.in-project true
+      - name: Use the cached venv
+        uses: actions/cache@v2
+        with:
+          path: ${{ github.workspace }}/.venv
+          key: poetry-${{ hashFiles('**/poetry.lock') }}
+      - run: ls -lah ${{ github.workspace }}
+      - name: Check formatting
+        run: make format
+
+  lint:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: "actions/setup-python@v2"
+        with:
+          python-version: "3.9"
+      - uses: abatilo/actions-poetry@v2.0.0
+      - name: Set Poetry config
+        run: poetry config virtualenvs.in-project true
+      - name: Use the cached venv
+        uses: actions/cache@v2
+        with:
+          path: ${{ github.workspace }}/.venv
+          key: poetry-${{ hashFiles('**/poetry.lock') }}
+      - name: Check linting
+        run: make lint
+
+  sort:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: "actions/setup-python@v2"
+        with:
+          python-version: "3.9"
+      - uses: abatilo/actions-poetry@v2.0.0
+      - name: Set Poetry config
+        run: poetry config virtualenvs.in-project true
+      - name: Use the cached venv
+        uses: actions/cache@v2
+        with:
+          path: ${{ github.workspace }}/.venv
+          key: poetry-${{ hashFiles('**/poetry.lock') }}
+      - name: Check import sorting
+        run: make sort
