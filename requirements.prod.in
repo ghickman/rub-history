@@ -1,0 +1,9 @@
+# Main prod requirements
+
+# To generate requirements file, run:
+# pip-compile --generate-hashes --output-file=requirements.prod.txt requirements.prod.in
+beautifulsoup4
+datasette
+datasette-publish-vercel
+requests
+sqlite-utils
