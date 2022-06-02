@@ -44,14 +44,17 @@ click==8.0.3 \
     --hash=sha256:410e932b050f5eed773c4cda94de75971c89cdb3155a72a0831139a79e5ecb5b
     # via
     #   click-default-group
+    #   click-default-group-wheel
     #   datasette
     #   sqlite-utils
     #   uvicorn
 click-default-group==1.2.2 \
     --hash=sha256:d9560e8e8dfa44b3562fbc9425042a0fd6d21956fcc2db0077f63f34253ab904
-    # via
-    #   datasette
-    #   sqlite-utils
+    # via datasette
+click-default-group-wheel==1.2.2 \
+    --hash=sha256:1599b0b6e0ff63ee806c2cb76593cb8cc73e723cd53532c92bc496dc6fc90e5c \
+    --hash=sha256:e90da42d92c03e88a12ed0c0b69c8a29afb5d36e3dc8d29c423ba4219e6d7747
+    # via sqlite-utils
 datasette==0.61.1 \
     --hash=sha256:060ed8737c5fc6d83e6ab35b84d91f9c0e39e3caf7d794106e39b4bef9b559eb \
     --hash=sha256:96978386e8e70cf42d09016236ed32b9de742e7861b98661cbb6cab7986dd3dd
@@ -266,9 +269,9 @@ sqlite-fts4==1.0.1 \
     --hash=sha256:a41b3e510df8bda50e9b1a5162a1e8ff3b92c62a1576ff5c74aaae2cedc9d4f5 \
     --hash=sha256:b2d4f536a28181dc4ced293b602282dd982cc04f506cf3fc491d18b824c2f613
     # via sqlite-utils
-sqlite-utils==3.26 \
-    --hash=sha256:1b6172f4f118b6ad1d21686c815e0765ae72fb02f1708dc26128032fa8a391da \
-    --hash=sha256:34b5e46ac98866370a4aa762e7db02398359b60b48b42b005a77284608ea2622
+sqlite-utils==3.26.1 \
+    --hash=sha256:18aff4dface28ce4a2f4859948589f5eb7b163c772a3a71fc16c9a174eb1f367 \
+    --hash=sha256:5514944924e5608579bdd70bd1ecb4472e6c18e194253baf04c1db120264ed3a
     # via -r requirements.prod.in
 tabulate==0.8.9 \
     --hash=sha256:d7c013fe7abbc5e491394e10fa845f8f32fe54f8dc60c6622c6cf482d25d47e4 \
