@@ -269,9 +269,9 @@ sqlite-fts4==1.0.1 \
     --hash=sha256:a41b3e510df8bda50e9b1a5162a1e8ff3b92c62a1576ff5c74aaae2cedc9d4f5 \
     --hash=sha256:b2d4f536a28181dc4ced293b602282dd982cc04f506cf3fc491d18b824c2f613
     # via sqlite-utils
-sqlite-utils==3.27 \
-    --hash=sha256:49eadc3cad92bebabbac450b825be3ab5277155d31d1a1c72acef61e65e44c6a \
-    --hash=sha256:6d06dd643d9f9afaf90934e22fa99bd654497a244388a491ae8773d5e6d03e89
+sqlite-utils==3.28 \
+    --hash=sha256:790b01f4be16c32756b9b5eae07b6b7c905b6613ca538d646877c50b05b0a53a \
+    --hash=sha256:e8841bff7fcf29b0789c374a4ccca42107de1592836aa6899a04e3aebd304277
     # via -r requirements.prod.in
 tabulate==0.8.9 \
     --hash=sha256:d7c013fe7abbc5e491394e10fa845f8f32fe54f8dc60c6622c6cf482d25d47e4 \
