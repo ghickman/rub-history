@@ -59,9 +59,9 @@ datasette==0.62 \
     # via
     #   -r requirements.prod.in
     #   datasette-publish-vercel
-datasette-publish-vercel==0.14.1 \
-    --hash=sha256:b6b2652c57cc24cab957ce765e1766a4596718e4103619a6d4a4d63b8f57e2bd \
-    --hash=sha256:ddafcdde4e5b3d46a170ca5ba71c2a51d8330c8839b47450eb1ecf662c56e0be
+datasette-publish-vercel==0.14.2 \
+    --hash=sha256:5c6ba4ce54898c79c62eeeb27b79437773e569fbc2da3fba8a3f9dd2cb8908f6 \
+    --hash=sha256:9632bbed0012941bf171510ea39d79ae8db0977d99300f1c36b176ea00cc05d5
     # via -r requirements.prod.in
 h11==0.12.0 \
     --hash=sha256:36a3cb8c0a032f56e2da7084577878a035d3b61d104230d4bd49c0c6b555a9c6 \
