@@ -43,21 +43,19 @@ click==8.0.3 \
     --hash=sha256:353f466495adaeb40b6b5f592f9f91cb22372351c84caeb068132442a4518ef3 \
     --hash=sha256:410e932b050f5eed773c4cda94de75971c89cdb3155a72a0831139a79e5ecb5b
     # via
-    #   click-default-group
     #   click-default-group-wheel
     #   datasette
     #   sqlite-utils
     #   uvicorn
-click-default-group==1.2.2 \
-    --hash=sha256:d9560e8e8dfa44b3562fbc9425042a0fd6d21956fcc2db0077f63f34253ab904
-    # via datasette
 click-default-group-wheel==1.2.2 \
     --hash=sha256:1599b0b6e0ff63ee806c2cb76593cb8cc73e723cd53532c92bc496dc6fc90e5c \
     --hash=sha256:e90da42d92c03e88a12ed0c0b69c8a29afb5d36e3dc8d29c423ba4219e6d7747
-    # via sqlite-utils
-datasette==0.61.1 \
-    --hash=sha256:060ed8737c5fc6d83e6ab35b84d91f9c0e39e3caf7d794106e39b4bef9b559eb \
-    --hash=sha256:96978386e8e70cf42d09016236ed32b9de742e7861b98661cbb6cab7986dd3dd
+    # via
+    #   datasette
+    #   sqlite-utils
+datasette==0.62 \
+    --hash=sha256:9571faceef182194bde4276c6b420146552ef41dbeeaf43ba66ce54467c77793 \
+    --hash=sha256:f719c9148970ed20f565b0a3d8461060fc3748674a1556d63afd058a06d136d5
     # via
     #   -r requirements.prod.in
     #   datasette-publish-vercel
@@ -195,9 +193,6 @@ pyparsing==3.0.7 \
     --hash=sha256:18ee9022775d270c55187733956460083db60b37d0d0fb357445f3094eed3eea \
     --hash=sha256:a6c06a88f252e6c322f65faf8f418b16213b51bdfaece0524c1c1bc30c63c484
     # via packaging
-python-baseconv==1.2.2 \
-    --hash=sha256:0539f8bd0464013b05ad62e0a1673f0ac9086c76b43ebf9f833053527cd9931b
-    # via datasette
 python-dateutil==2.8.2 \
     --hash=sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86 \
     --hash=sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9
