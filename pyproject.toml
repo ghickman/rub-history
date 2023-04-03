@@ -10,11 +10,31 @@ exclude = '''
 )
 '''
 
-[tool.isort]
-force_grid_wrap = 0
-include_trailing_comma = true
-line_length = 88
-lines_after_imports = 2
-multi_line_output = 3
-skip_glob = [".direnv", ".venv", "venv"]
-use_parentheses = true
+[tool.ruff]
+exclude = [
+  "*.egg-info",
+  ".direnv",
+  ".git",
+  ".github",
+  ".venv",
+  "__pycache__",
+  "build",
+  "dist",
+  "source",
+]
+extend-ignore = [
+  "E501",
+  "E741",
+]
+line-length = 88
+extend-select = [
+  "A",  # flake8-builtins
+  "I",  # isort
+  "INP",  # flake8-no-pep420
+  "ISC",  # flake8-implicit-str-concat
+  "UP",  # pyupgrade
+  "W",  # pycodestyle warning
+]
+
+[tool.ruff.isort]
+lines-after-imports = 2
