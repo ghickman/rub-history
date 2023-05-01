@@ -53,9 +53,9 @@ click-default-group-wheel==1.2.2 \
     # via
     #   datasette
     #   sqlite-utils
-datasette==0.64.1 \
-    --hash=sha256:7253c244ab35b537b2aa5ac239d24fd101af4a46caef11ee06a727b1db4e64ca \
-    --hash=sha256:ca30c37e515400b3ba1b07dfe51093238e33baca75ccf3d163645cf5b3c80fd5
+datasette==0.64.3 \
+    --hash=sha256:12ae15cd680d87f76a45ad30ff5b28a1fbf482e480dffdcfcea48be58b7a7c11 \
+    --hash=sha256:5d1e2272c9b5321f4fe158da76c81897dc34ea8daef9633b7232437782026096
     # via
     #   -r requirements.prod.in
     #   datasette-publish-vercel
