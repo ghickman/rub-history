@@ -188,7 +188,9 @@ pint==0.18 \
 pluggy==1.0.0 \
     --hash=sha256:4224373bacce55f955a878bf9cfa763c1e360858e330072059e10bad68531159 \
     --hash=sha256:74134bbf457f031a36d68416e1509f34bd5ccc019f0bcc952c7b909d06b37bd3
-    # via datasette
+    # via
+    #   datasette
+    #   sqlite-utils
 pyparsing==3.0.7 \
     --hash=sha256:18ee9022775d270c55187733956460083db60b37d0d0fb357445f3094eed3eea \
     --hash=sha256:a6c06a88f252e6c322f65faf8f418b16213b51bdfaece0524c1c1bc30c63c484
@@ -281,9 +283,9 @@ sqlite-fts4==1.0.1 \
     --hash=sha256:a41b3e510df8bda50e9b1a5162a1e8ff3b92c62a1576ff5c74aaae2cedc9d4f5 \
     --hash=sha256:b2d4f536a28181dc4ced293b602282dd982cc04f506cf3fc491d18b824c2f613
     # via sqlite-utils
-sqlite-utils==3.33 \
-    --hash=sha256:a5260d0797606650847b3367547e9e3c4cba51ca88d55a1da0cef9aa2f13dfd5 \
-    --hash=sha256:be779936dadb9decef511a46f280bd94683d385625f69a65730fb6e00e5f2656
+sqlite-utils==3.35 \
+    --hash=sha256:8f6fe7f8d12772cd5cf4594703a98dcd0c37c0fd6820dd20541ba74b9fca363a \
+    --hash=sha256:d95591db18716ce7eac9a6359f4958598944d9e6640ccc42a2be6ab8456edddf
     # via -r requirements.prod.in
 tabulate==0.8.9 \
     --hash=sha256:d7c013fe7abbc5e491394e10fa845f8f32fe54f8dc60c6622c6cf482d25d47e4 \
