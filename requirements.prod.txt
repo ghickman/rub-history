@@ -56,9 +56,9 @@ click-default-group-wheel==1.2.2 \
     --hash=sha256:1599b0b6e0ff63ee806c2cb76593cb8cc73e723cd53532c92bc496dc6fc90e5c \
     --hash=sha256:e90da42d92c03e88a12ed0c0b69c8a29afb5d36e3dc8d29c423ba4219e6d7747
     # via datasette
-datasette==0.64.3 \
-    --hash=sha256:12ae15cd680d87f76a45ad30ff5b28a1fbf482e480dffdcfcea48be58b7a7c11 \
-    --hash=sha256:5d1e2272c9b5321f4fe158da76c81897dc34ea8daef9633b7232437782026096
+datasette==0.64.4 \
+    --hash=sha256:75b5928d3b2a16f33e3b8ef85efe8a8d5dfbc0bacadb98b4723a008c3e14fb49 \
+    --hash=sha256:ef9dbade58f4a3d73e0c745b43219cf9d04b28919571f96affd5675ef8e13cfc
     # via
     #   -r requirements.prod.in
     #   datasette-publish-vercel
