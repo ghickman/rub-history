@@ -38,6 +38,11 @@ build:
 
 # Deploy to vercel
 deploy:
+    #!/usr/bin/env bash
+    set -euo pipefail
+
+    test -e "$(which vercel)" || npm ci
+
     uv run datasette publish vercel boxes.db \
       --title "Really Useful Boxes" \
       --about "ghickman/rub-history" \
