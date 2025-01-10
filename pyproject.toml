@@ -1,32 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rub-history"
+description = ""
+version = "1+local"
+readme = "README.md"
+authors = [{name = "George Hickman", email = "george@ghickman.co.uk"}]
+requires-python = ">=3.13"
+dependencies = [
+  "beautifulsoup4>=4.12.3",
+  "datasette>=0.65.1",
+  "datasette-publish-vercel>=0.14.2",
+  "requests>=2.32.3",
+  "sqlite-utils>=3.38",
+]
+
+[dependency-groups]
+dev = [
+  "black>=24.10.0",
+  "pip-tools>=7.4.1",
+  "ruff>=0.9.0",
+  "toml-sort>=0.24.2",
+]
+
 [tool.black]
-exclude = '''
+extend-exclude = '''
 (
-  /(
-      \.git         # exclude a few common directories in the
-    | \.direnv      # root of the repo
-    | \.venv
-    | venv
-  )/
+  .ruff_cache
 )
 '''
 
 [tool.ruff]
-exclude = [
-  "*.egg-info",
-  ".direnv",
-  ".git",
-  ".github",
-  ".venv",
-  "__pycache__",
-  "build",
-  "dist",
-  "source",
-]
+line-length = 88
+
+[tool.ruff.lint]
 extend-ignore = [
   "E501",
   "E741",
 ]
-line-length = 88
 extend-select = [
   "A",  # flake8-builtins
   "I",  # isort
@@ -36,5 +49,14 @@ extend-select = [
   "W",  # pycodestyle warning
 ]
 
-[tool.ruff.isort]
+[tool.ruff.lint.isort]
 lines-after-imports = 2
+
+[tool.tomlsort]
+spaces_before_inline_comment = 2
+trailing_comma_inline_array = true
+sort_first = [
+  "build-system",
+  "project",
+  "dependency-groups",
+]

@@ -14,12 +14,10 @@ jobs:
     - name: Check out this repo
       uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
+    - name: Set up uv
+      uses: astral-sh/setup-uv@887a942a15af3a7626099df99e897a18d9e5ab3a  # v5.1.0
       with:
-        python-version: "3.11"
-        cache: "pip"
-        cache-dependency-path: requirements.*.txt
+        version: "latest"
 
     - uses: extractions/setup-just@dd310ad5a97d8e7b41793f8ef055398d51ad4de6  # v2.0.0
       env:
