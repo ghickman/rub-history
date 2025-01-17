@@ -38,16 +38,10 @@ build:
 
 # Deploy to vercel
 deploy:
-    #!/usr/bin/env bash
-    set -euo pipefail
-
-    test -e "$(which vercel)" || npm ci
-
-    uv run datasette publish vercel boxes.db \
+    uv run datasette publish fly boxes.db \
+      --app rub-history \
       --title "Really Useful Boxes" \
       --about "ghickman/rub-history" \
       --about_url "https://github.com/ghickman/rub-history" \
       --source "Really Useful Boxes" \
-      --source_url "https://www.reallyusefulproducts.co.uk/uk/html/boxdetails.php" \
-      --project rub-history \
-      --token $VERCEL_TOKEN
+      --source_url "https://www.reallyusefulproducts.co.uk/uk/html/boxdetails.php"
