@@ -22,12 +22,12 @@ def iter_rows(rows):
 
         yield {
             "name": name.text,
-            "external-length": e_length,
-            "external-width": e_width,
-            "external-depth": e_depth,
-            "internal-length": i_length,
-            "internal-width": i_width,
-            "internal-depth": i_depth,
+            "external_length": e_length,
+            "external_width": e_width,
+            "external_depth": e_depth,
+            "internal_length": i_length,
+            "internal_width": i_width,
+            "internal_depth": i_depth,
             "weight": weight.text,
         }
 
