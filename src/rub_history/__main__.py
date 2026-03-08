@@ -1,7 +1,11 @@
 import json
+import re
 
 import requests
 from bs4 import BeautifulSoup
+
+
+volume_pat = re.compile(r"^(?P<volume>\d{1,3}(?:\.\d{1,2})?)")
 
 
 def iter_rows(rows):
@@ -20,8 +24,13 @@ def iter_rows(rows):
             i_length = i_width = i_depth = ""
             print(f"Unable to parse internal dimensions for '{name.text}', ignoring")
 
+        volume = ""
+        if match := volume_pat.match(name.text):
+            volume = match.group("volume")
+
         yield {
             "name": name.text,
+            "volume": volume,
             "external_length": int(e_length or 0),
             "external_width": int(e_width or 0),
             "external_depth": int(e_depth or 0),
