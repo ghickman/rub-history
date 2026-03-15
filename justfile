@@ -27,6 +27,7 @@ scrape:
 
 # Build the database file
 build:
+    @rm -rf boxes.db
     cat data.json | uv run sqlite-utils insert boxes.db boxes -
 
 # Deploy to vercel
