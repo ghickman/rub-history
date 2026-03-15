@@ -2,10 +2,10 @@
 default:
     @{{ just_executable() }} --list
 
-black *args=".":
+black *args="src":
     uv run black --check {{ args }}
 
-ruff *args=".":
+ruff *args="src":
     uv run ruff check {{ args }}
 
 toml-sort *args:
@@ -16,8 +16,8 @@ check: black ruff
 
 # fix formatting and import sort ordering
 fix:
-    uv run black .
-    uv run ruff check --fix .
+    uv run black src
+    uv run ruff check --fix src
     {{ just_executable() }} toml-sort --in-place
     just --fmt --unstable --justfile justfile
 
