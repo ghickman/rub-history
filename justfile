@@ -2,13 +2,6 @@
 default:
     @{{ just_executable() }} --list
 
-# upgrade dev or prod dependencies (all by default, specify package to upgrade single package)
-upgrade env package="":
-    #!/usr/bin/env bash
-    opts="--upgrade"
-    test -z "{{ package }}" || opts="--upgrade-package {{ package }}"
-    uv add $opts
-
 black *args=".":
     uv run black --check {{ args }}
 
