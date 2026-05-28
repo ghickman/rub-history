@@ -4,6 +4,8 @@ name: Linting
 on:
   push:
 
+permissions: {}
+
 jobs:
   format:
     runs-on: ubuntu-latest
