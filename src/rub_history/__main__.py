@@ -41,8 +41,12 @@ def iter_rows(rows):
         }
 
 
-url = "https://www.reallyusefulproducts.co.uk/uk/html/boxdetails.php"
-r = requests.get(url)
+r = requests.get(
+    "https://www.reallyusefulproducts.co.uk/uk/html/boxdetails.php",
+    headers={
+        "User-Agent": "RUB History 1.0",
+    },
+)
 r.raise_for_status()
 
 print("Webpage retrieved")
